@@ -1,0 +1,140 @@
+1. Apa itu TailwindCSS?
+    Sebuah utility-first framework yang di dalamnya banyak sekali terdapat class class.
+    Sebuah framework yang bisa membuat kita secara cepat membangun website yang modern, semuanya bisa kita buat tanpa meninggalkan HTML kita.
+
+    Membuat code html dengan css itu disebut Component-First.
+    Utility-First ?
+        di dalam htmlnya akan memiliki class class, yang akan didefinisikan di dalam css. Dan cssnya dibuatkan oleh Tailwind. Yaitu class yang berfungsi untuk melakukan 1 hal saja.
+
+    Vanilla Css (Component-First framework) vs. Bootstrap (UI framework) vs. Tailwind (Utility-First framework)
+
+    Utilities
+        > Preflight
+        > Layout
+        > Flexbox & Grid
+        > Spacing & Sizing
+        > Typography
+        > Background & Borders
+        > Effect & Filters
+        > Transition, Transformation & Animation
+        > Tables
+        > ...
+
+    Features
+        > Interactivity
+            - Pseudo-classes : hover, focus, active, first, last, ...
+            - Pseudo-element : before, after, placeholder, file, selection, ...
+        > Responsive Design
+        > Dark Mode
+        > Reusability
+        > Custom Styles
+        > Functions & Directives
+
+
+2. Kenapa TailwindCSS?
+    Apa yang biasa dilakukan orang orang dalam prakteknya tidak berhasil.
+    CSS Utility Classes and "Separation of Concerns". / (Pemisahan Tujuan)
+
+    Separation of Concerns. [Structure, Presentation(Tampilan), Behaviour(Prilaku)].
+    Intinya dengan Separation of Concern Cssnya tidak terikat dengan element HTML.
+
+    Semantic CSS = memberikan makna pada html.
+        misalkan :
+            cara ini tidak semantic dan tidak menerapkan Separation of Concern
+                <p class="text-center">Hello there!</p>
+                .text-center { text-align: center; }
+
+            seharusnya kita berikan makna pada codenya
+                <p class="greeting">Hello there!</p>
+                .greeting { text-align: center; }
+
+    BEM (Block, Element, Modifiers) dengan BEM maka diberikan __
+
+    misalkan :  p { ... }                   <- ini terikat dengan element html
+                .author-bio__text { ... }   <- init tidak terikat dengan element html
+                *namun ini tidak semantic, karena jika ada card baru dengan nama article maka kita harus buat baru
+
+    Solusinya dengan membuat komponen yang namanya tidak bergantung pada contentnya.
+    karena ada author dan article maka harus membuat 2x dan itu duplikasi, maka bisa diganti misalnya card.
+    *Namun Problem kembali di Separation of Concern
+
+    Separation of Concern.  (Css yang bergantung pada html)
+        Kelebihan : HTML restyleable, bisa ubah ubah htmlnya.
+        Kekurangan : CSS not reusable, tidak bisa digunakan kembali harus membuat baru.
+    vs.
+    Mixing of Concern.  (Html yang bergantung pada Css)
+        Kelebihan : CSS reusable, membuat komponen komponen yang bisa dipake di html.   (contoh: Bootstrap)
+        Kekurangan : HTML not reusable, kita tidak bisa sembarangan memberikan class.
+
+    Reusability adalah jalan yang digunakan oleh TailwindCss.
+
+    Menghilangkan Nama Komponen karena sudah tidak menganut Separation of Concern. Jadi semua properti properti css-nya diambil sebagai utility. Tapi sebaiknya kita tetap membuat component tapi buatlah dengan utility terlebih dahulu.
+        Component : .card
+        Utility : .text-center { text-align: center; }
+
+    Komponen CSS yang tidak bergantung pada konten.
+    misalkan : card, btn, img-list, modal, dll.
+
+        > child combinator CSS.
+            contoh : .container > img { ... }
+                    *turunannya langsung.
+
+
+3. Instalasi & Konfigurasi Tailwind Css.
+    Exs Vs Code : Tailwind CSS Intellisense, Live Preview, PostCss Language Support.
+    Package Manager : Node Js
+
+    *CDN tailwind bukan cara terbaik untuk production.
+    cdn tailwind : <script src="https://cdn.tailwindcss.com"></script>
+
+    Install Tailwind
+        npm init -y                                             -- inisialisasi package.json, -y akan membuat semuanya diisi dengan nilai default.
+
+        npm install -D tailwindcss postcss autoprefixer         -- install tailwind postcss & autoprefixer dengan node js
+        npx tailwindcss init                                    -- inisialisasi tailwind
+
+        npm uninstall tailwindcss                               *-- uninstall tailwind
+
+    Configurasi Path file template di tailwind.config.js
+        content: ['./index.html'],                              -- configurasi di file tailwind.config.css
+
+    Menambahkan Tailwind Directives pada file css               -- buat file input.css dan tambahkan code postcss berikut. Ini merupakan 3 layers of tailwind.
+        @tailwind base;                                             -- menjalankan Preflight (Reset semua browser)
+        @tailwind components;                                       -- meminta component di dalam librarynya
+        @tailwind utilities;                                        -- class utility yang akan dipakai
+
+    Build TailwindCss
+        npx tailwindcss -i ./input.css -o ./output.css --watch  -- build tailwind, hasil compile dari file input.css
+
+
+    Agar Rapih penyimpanan nya.
+    > node_modules
+    > public
+        - index.html
+    > src
+        > css
+            - input.css
+
+        ubah confignya menjadi content: ['./public/**/*.{html,js}'],
+        npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch
+
+    *jika ada class dari css yang tidak digunakan saat deploy akan secara otomatis menghilang.
+    *atau jika mau langsung dihilangkan dengan cara melakukan restart pada watchernya. Lalu jalankan kembali perintah ini :
+        npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch
+
+        atau cara cepatnya buka file tailwind.config.js lalu save maka code css yang tidak digunakannya akan menghilang.
+
+    *jika kita close project maka kita harus menjalankan perintah ini kembali:
+        npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch
+
+        namun ada cara cepatnya buka package.json
+        buat menjadi seperti ini
+            "scripts": {
+                "dev": "npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --watch",
+                "test": "echo \"Error: no test specified\" && exit 1"
+            },
+
+        tinggal jalankan npm run dev
+
+    *minify file style.css agar ukurannya lebih kecil (biasanya dilakukan diakhir ketika project selesai).
+        npx tailwindcss -o ./public/css/final.css --minify
