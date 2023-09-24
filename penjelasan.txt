@@ -138,3 +138,75 @@
 
     *minify file style.css agar ukurannya lebih kecil (biasanya dilakukan diakhir ketika project selesai).
         npx tailwindcss -o ./public/css/final.css --minify
+
+
+4. Utility Dasar (1)
+    Preflight           = reset milik tailwind.
+
+    *jika ingin menggunakan cdn bisa juga Menambahkan fitur autocompletenya tailwind.
+        agar bisa, cukup buat file tailwind.config.js kosong.
+
+    *menambahkan style css kita sendiri (inner html).
+        <style type="text/tailwindcss">
+            * {
+                border: 1px solid red;
+            }
+        </style>
+
+    Spacing & Sizing.
+        Margin memiliki nilai minus & auto, sedangkan padding tidak ada.
+        Space Between : memberikan jarak antar element.
+
+    Sizing.
+    Typography.
+    Colors.
+
+
+5. Utility Dasar (2)
+    Background & Border.
+        background attachment : bg-fixed (menimbulkan efek parallax)
+    Rounding & Shadow.
+    Effect & Filters.
+        mix blend mode : efek menggabungkan antara warna element dengan backgroundnya.
+        background blend  mode : efek menggabungkan antara background-image nge bland ke background-color.
+
+    jika kita memberikan style kita sendiri biasanya di extends tailwindnya.
+    namun kita juga bisa memberikan arbitrary value css di dalam tailwind.
+    misalkan : p-11 itu sama dengan 44px.
+                    misalkan kita ingin menyentuh 42 px bisa dengan cara p-[42px].
+
+    agar berada di tengah secara horizontal pembungkusnya harus diberikan flex.
+    memberikan transparansi : bg-white/30   -- memberikan transparansi 30%
+
+
+6. Pseudo Class & Dark Mode.
+    grouping.
+        misalkan sebuah box ketika di hover akan berubah warna.
+            maka cukup berikan : hover:bg-sky-200.
+        namun jika ingin merubah warna tulisan di dalamnya, tidak bisa secara langsung. kita harus menambahkan grouping pada text yang dipilih.
+            misalkan h5 nya akan berwarna putih : group-hover:text-white
+            *namun pada box nya kita harus memberikan class group, sebagai penanda bahwa ini adalah groupingnya.
+
+        merubah seleksi, dengan sudo class selection.
+
+        sibling, sebelah sebelahan elementnya.
+        misalkan input & p (notice).
+        di dalam inputnya diberikan peer, dan ketika inputannya salah misalkan.
+        maka di dalam p yang asanya diberikan class invisible tambahkan-juga peer-invalid:visible
+
+    dark-mode
+        dengan memberikan class dark:
+        dark mode bisa menyesuaikan dengan mode yang ada di dalam sistem operasi kita.
+        bisa juga diganti dengan lewat webnya.
+
+        dengan menambahkan darkMode: 'class',
+
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                        }
+                    }
+                }
+            }
