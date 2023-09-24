@@ -210,3 +210,20 @@
                     }
                 }
             }
+
+
+7. Transform, Transition, Animation
+    *Jika ingin memberikan custom animation buat juga, keyframe di dalam config tailwind-nya.
+
+8. Layouting
+    Container, utility class pada tailwind untuk memberikan ukuran yang fix pada sebuah bagian atau element.
+    Floats, sering digunakan biasanya digunakan juga dalam wrapping.
+    Positions, menerapkan posisi pada element yang dimiliki.
+        *cara memberikan nilai minus :
+            top-10      -- tidak minus
+            -top-10     -- minus
+
+        *cara agar posisi tepat berada di tengah, jika menggunakan position.
+            left-1/2 -translate-x-1/2
+            *bisa menggunakan cara tersebut dan itu menyesuaikan
+    Columns
