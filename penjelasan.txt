@@ -227,3 +227,24 @@
             left-1/2 -translate-x-1/2
             *bisa menggunakan cara tersebut dan itu menyesuaikan
     Columns
+
+9. Responsive Design
+    Memberikan utility utility berbeda saat ukuran layar tertentu / breakpoint tertentu.
+    jika diberikan prefix (min-height) maka akan berubah seterusnya
+
+        Breakpoint prefix	Minimum width	CSS
+        sm	640px	@media (min-width: 640px) { ... }
+        md	768px	@media (min-width: 768px) { ... }
+        lg	1024px	@media (min-width: 1024px) { ... }
+        xl	1280px	@media (min-width: 1280px) { ... }
+        2xl	1536px	@media (min-width: 1536px) { ... }
+
+    Menyesuaikan image bisa dengan cara berikut.
+        sm:h-64 sm:w-full sm:object-cover
+
+
+10. Flexbox
+    Jika tidak menggunakan flexbox itu content akan menjajar ke bawah kan, nah kasus kali ini ketika menggunakan flex, maka sejajarnya akan kesamping sebanyak banyaknya content apapun itu itu akan memaksakan sejajar kesamping.
+    berikan flex-wrap agar contentnya dapat menyesuaikan dari ukuran nya, maka ketika tidak cukup akan turun ke bawah bukan memaksakan untuk tetap disampingnya.
+
+11. Grid

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!-- <html lang="en" class="scroll-smooth"> -->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -115,7 +116,7 @@
     <hr class="my-20">
 
     <!-- Button Toggle Dark Mode -->
-    <div class="flex justify-center">
+    <div class="flex justify-evenly">
         <span class="text-sm text-slate-500 mr-2">Light</span>
         <!-- Toggle -->
         <input type="checkbox" id="toggle" class="hidden">
@@ -214,6 +215,117 @@
             <img src="https://source.unsplash.com/600x400" alt="Image" class="mb-4">
         </div>
     </div>
+
+    <hr class="my-20">
+
+    <!-- Responsive Design -->
+    <div class="container px-6 mx-auto font-inter max-w-md sm:max-w-xl md:max-w-5xl">
+        <h3 class="text-4xl font-bold text-slate-800 sm:text-5xl md:text-6xl">Luth<span class="text-sky-500">fi</span> Nur Ramadhan</h3>
+        <img src="https://source.unsplash.com/1280x960?code" alt="Code" class="mt-4 rounded-xl shadow-xl sm:mt-6 sm:h-64 sm:w-full sm:object-cover">
+        <h2 class="mt-6 text-2xl font-semibold text-slate-800 sm:mt-8 sm:text-4xl">Mari Belajar Programming Bersama Izuchii</h2>
+        <p class="mt-2 text-slate-500 sm:mt-4 sm:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptas vero cum necessitatibus explicabo nesciunt esse quasi, atque impedit non beatae eum nostrum tenetur.</p>
+        <div class="mt-4 sm:mt-6">
+            <a href="#" class="inline-block px-5 py-3 bg-red-600 text-white rounded-lg shadow-lg uppercase font-semibold tracking-wider text-sm sm:text-base">Subscribe Channel Youtube</a>
+        </div>
+    </div>
+
+    <hr class="my-20">
+
+    <!-- FlexBox -->
+    <div class="container px-6 mx-auto font-inter max-w-md sm:max-w-xl md:max-w-5xl lg:flex lg:max-w-full lg:p-0">
+        <div class="lg:p-12 lg:flex-1">
+            <h3 class="text-4xl font-bold text-slate-800 sm:text-5xl md:text-6xl">Luth<span class="text-sky-500">fi</span> Nur Ramadhan</h3>
+            <img src="https://source.unsplash.com/1280x960?code" alt="Code" class="mt-4 rounded-xl shadow-xl sm:mt-6 sm:h-64 sm:w-full sm:object-cover lg:hidden">
+            <h2 class="mt-6 text-2xl font-semibold text-slate-800 sm:mt-8 sm:text-4xl">Mari Belajar Programming Bersama Izuchii</h2>
+            <p class="mt-2 text-slate-500 sm:mt-4 sm:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptas vero cum necessitatibus explicabo nesciunt esse quasi, atque impedit non beatae eum nostrum tenetur.</p>
+            <div class="mt-4 sm:mt-6">
+                <a href="#" class="inline-block px-5 py-3 bg-red-600 text-white rounded-lg shadow-lg uppercase font-semibold tracking-wider text-sm sm:text-base">Subscribe Channel Youtube</a>
+            </div>
+        </div>
+        <!-- Display Flex agar memenuhi ukuran nya -->
+        <div class="hidden lg:flex lg:w-1/2">
+            <!-- Agar gambar tidak mengalami stretch gunakan object-cover -->
+            <img src="https://source.unsplash.com/1280x960?code" alt="Code" class="mt-4 object-cover rounded-tl-3xl">
+        </div>
+    </div>
+
+    <!-- Gallery FlexBox -->
+    <!-- Note :
+        - Jika hanya menggunakan flex, maka akan menyesuaikan sebanyak mungkin dalam 1 baris.
+            *untuk mengakalinya dapat dengan cara sm:flex-wrap
+     -->
+    <h2 class="text-center mt-24 mb-10 text-3xl font-bold text-slate-700">My Gallery!</h2>
+    <div class="container mx-auto px-6 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly sm:mb-0 lg-w-72">
+        <div class="rounded shadow-lg overflow-hidden my-10 sm:w-64 bg-white md:w-80">
+            <img src="https://source.unsplash.com/1280x960?code" alt="code" class="w-full">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 text-slate-700">Image Title</div>
+                <p class="text-sm text-slate-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis doloribus voluptatum id ut eveniet ipsum voluptatem soluta, accusantium est nostrum harum saepe quod illo! In, qui officia! Blanditiis, ex voluptatibus.
+                </p>
+            </div>
+        </div>
+        <div class="rounded shadow-lg overflow-hidden my-10 sm:w-64 bg-white md:w-80">
+            <img src="https://source.unsplash.com/1280x960?code" alt="code" class="w-full">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 text-slate-700">Image Title</div>
+                <p class="text-sm text-slate-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis doloribus voluptatum id ut eveniet ipsum voluptatem soluta, accusantium est nostrum harum saepe quod illo! In, qui officia! Blanditiis, ex voluptatibus.
+                </p>
+            </div>
+        </div>
+        <div class="rounded shadow-lg overflow-hidden my-10 sm:w-64 bg-white md:w-80">
+            <img src="https://source.unsplash.com/1280x960?code" alt="code" class="w-full">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2 text-slate-700">Image Title</div>
+                <p class="text-sm text-slate-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis doloribus voluptatum id ut eveniet ipsum voluptatem soluta, accusantium est nostrum harum saepe quod illo! In, qui officia! Blanditiis, ex voluptatibus.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <hr class="my-20">
+
+
+    <!-- GRID -->
+    <div class="p-2 font-inter grid grid-cols-2 gap-2 md:grid-cols-4 md:p-4">
+        <h2 class="text-xl h-15 text-semibold text-slate-700 md:col-start-4 md:row-start-2 md:flex"><span class="self-center">Izuchii Website</span></h2>
+        <div class="text-lg h-15 font-bold text-slate-600 md:col-start-2 md:row-start-2 md:flex"><span class="self-end">@luthfiramadhan.lr55@gmail.com</span></div>
+
+        <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-125">
+            <div class="w-full h-full bg-[url('https://source.unsplash.com/680x480?code')] bg-cover bg-center absolute group-hover hover:scale-125 trasition-all duration-500 group-hover:rotate-12"></div>
+        </div>
+        <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-125 md:col-start-3">
+            <div class="w-full h-full bg-[url('https://source.unsplash.com/680x480?code')] bg-cover bg-center absolute group-hover hover:scale-125 trasition-all duration-500 group-hover:rotate-12"></div>
+        </div>
+        <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-125">
+            <div class="w-full h-full bg-[url('https://source.unsplash.com/680x480?code')] bg-cover bg-center absolute group-hover hover:scale-125 trasition-all duration-500 group-hover:rotate-12"></div>
+        </div>
+        <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-125">
+            <div class="w-full h-full bg-[url('https://source.unsplash.com/680x480?code')] bg-cover bg-center absolute group-hover hover:scale-125 trasition-all duration-500 group-hover:rotate-12"></div>
+        </div>
+        <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-125">
+            <div class="w-full h-full bg-[url('https://source.unsplash.com/680x480?code')] bg-cover bg-center absolute group-hover hover:scale-125 trasition-all duration-500 group-hover:rotate-12"></div>
+        </div>
+        <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-125 md:col-start-2">
+            <div class="w-full h-full bg-[url('https://source.unsplash.com/680x480?code')] bg-cover bg-center absolute group-hover hover:scale-125 trasition-all duration-500 group-hover:rotate-12"></div>
+        </div>
+        <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-125 md:col-start-4">
+            <div class="w-full h-full bg-[url('https://source.unsplash.com/680x480?code')] bg-cover bg-center absolute group-hover hover:scale-125 trasition-all duration-500 group-hover:rotate-12"></div>
+        </div>
+        <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-125 md:col-start-1">
+            <div class="w-full h-full bg-[url('https://source.unsplash.com/680x480?code')] bg-cover bg-center absolute group-hover hover:scale-125 trasition-all duration-500 group-hover:rotate-12"></div>
+        </div>
+        <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-125 md:col-start-3">
+            <div class="w-full h-full bg-[url('https://source.unsplash.com/680x480?code')] bg-cover bg-center absolute group-hover hover:scale-125 trasition-all duration-500 group-hover:rotate-12"></div>
+        </div>
+        <div class="h-15 bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-125 md:col-start-3">
+            <div class="w-full h-full bg-[url('https://source.unsplash.com/680x480?code')] bg-cover bg-center absolute group-hover hover:scale-125 trasition-all duration-500 group-hover:rotate-12"></div>
+        </div>
+    </div>
+
+
+
+
 
 
     <div class="mb-96"></div>
