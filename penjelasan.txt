@@ -248,3 +248,68 @@
     berikan flex-wrap agar contentnya dapat menyesuaikan dari ukuran nya, maka ketika tidak cukup akan turun ke bawah bukan memaksakan untuk tetap disampingnya.
 
 11. Grid
+
+12. Functions & Directives
+    https://tailwindcss.com/docs/functions-and-directives
+
+    Directives itu adalah keyword yang bisa kita gunakan di dalam tailwind yang didepannya memiliki @ 'at-rules' yang bisa kita gunakan di dalam css yang menawarkan fungsi fungsi spesial di project tailwind kita.
+
+        @tailwind   = ketika kita ingin melakukan genarate terhadap css tailwind-nya.
+
+        @tailwind base      = style style utama yang menjadi dasar tailwindnya.
+        @tailwind component = akan menambahkan class class component jika ada.
+        @tailwind utilities = akan memasukkan class class utilities yang digunakan
+        @tailwind variants  = seperti hover: focus:
+
+        @layer      = kita gunakan ketika kita ingin memodifikasi isi dari 3 directives diatas.
+
+
+        kita bisa melakukannya seperti ini
+            @tailwind base;
+            @tailwind components;
+            @tailwind utilities;
+
+            h1 {
+                font-size: 6rem;
+            }
+
+            *namun jika tidak menggunakan @layer tailwind akan menyimpan h1 {} dipaling bawah
+
+        Jika kita melakukannya seperti ini
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            h1 {
+                font-size: 6rem;
+            }
+        }
+
+            *maka akan di atas, menjadi perubahan di dalam base nya.
+
+            begitu pula untuk custom utilities.
+
+
+        @apply  = digunakan untuk melakukan penyimpanan utilities utilities class yang sudah ada di tailwind untuk dimasukkan ke custom css kita secara inline.
+            *bisa juga digunakan untuk membuat component.
+
+
+        @layer components {
+            .grid-card {
+                @apply bg-blue-500 aspect-[4/3] rounded-lg m-2 md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden relative hover:scale-95 transition-all duration-500;
+            }
+        }
+
+            *dengan membuat components kita cukup memanggil .grid-card
+
+
+    Functions, menambahkan beberapa fungsi custom di dalam css untuk mengakses nilai nilai spesifik untuk tailwindnya.
+        Contoh Theme: {}
+
+    jika kita melakukan-nya seperti ini maka
+    h1 {
+        @apply text-8xl text-izu;   /* hasil warna nya akan rgb */
+        /* Functions */
+        /* color: theme(colors.izu); */     /* hasil warna nya akan hexa */
+    }
